@@ -1,0 +1,73 @@
+<%- include('../partials/header.ejs') -%>
+    <%- include('../partials/navbar.ejs') -%>
+
+<!--SHOP-->
+Shooop
+        <div class="container">
+            <div class="row mt-4">
+
+                <div class="col-md-9 offset-md-3">
+                    <h1 class="display-4">Signup</h1>
+                    <hr>
+                  
+                    <div class="col">
+                        <a href="/auth/facebook" class="fb btn">
+                          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                         </a>
+                    </div>
+                    <%- include('../partials/flashMessage.ejs') -%>
+
+                        <form action="/users/signup" method="post">
+
+                            <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+                        </div>
+
+                            <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="email">First Name</label>
+                                <input type="text" name="Fname" id="Fname" class="form-control">
+                            </div>
+                        </div>
+
+                            <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="email">Last Name</label>
+                                <input type="text" name="Lname" id="Lname" class="form-control">
+                            </div>
+                        </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustomUsername">User Name</label>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                  </div>
+                                  <input type="text" class="form-control" name="UserName" id="UserName" placeholder="UserName" aria-describedby="inputGroupPrepend" required>
+                                </div>
+                              </div>
+
+                              <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="password"> Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="confirm_passwordUS"> Confirm Password</label>
+                                <input type="password" name="confirm_passwordUS" id="confirm_passwordUS" class="form-control">
+                            </div>
+                        </div>
+                            <div class="mt-2 form-group">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer.ejs') -%>
