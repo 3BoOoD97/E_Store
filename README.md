@@ -1,1 +1,3 @@
-# This is my First React project
+# This is my Second React Project
+
+For security reasons .env File was deleted
