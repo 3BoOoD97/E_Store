@@ -60,10 +60,11 @@ app.get('/', (req,res)=>{
   res.redirect('/events')
 });
 
+/*
 //bring users route
 const users = require ('./routes/user-routes')
 app.use('/users', users)
-
+*/
 //brin events routes
 const events = require ('./routes/even-routes')
 app.use('/events', events)
@@ -77,13 +78,12 @@ app.use('/shops', shops)
 const shopUsers = require ('./routes/shopUsers-routes')
 app.use('/shopUsers', shopUsers)
 
-//
+// Since Facebook have been requiring usage of HTTPS for our redirect URIs
 app.get('/auth/facebook',
   passport.authenticate('facebook', { scope: 'read_stream' })
 );
 
 app.get('/auth/facebook/signup', passport.authenticate('facebook'));
-
   passport.authenticate('facebook',{
     successRedirect: '/users/profile',
     failureRedirect: '/shopMembers/signup' })

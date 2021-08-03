@@ -7,13 +7,15 @@ const passport = require('passport')
 //Login form
 router.get('/login', (req, res) => {
     res.render('shopMembers/login', {
+        error: req.flash('error')
+
     })
 })
 
 router.post('/login',
 passport.authenticate('local.login', {
-    successRedirect: '/users/profile',
-    failureRedirect: '/shopMembers/login',
+    successRedirect: '/shopUsers/profile',
+    failureRedirect: '/shopUsers/login',
     failureFlash: true
 }))
 
@@ -27,14 +29,18 @@ router.get('/signup', (req,res)=>{
 //Signup post req
 router.post('/signup',
 passport.authenticate('local.signup', {
-    successRedirect: '/users/profile',
-    failureRedirect: '/shopMembers/signup',
+    successRedirect: '/shopUsers/profile',
+    failureRedirect: '/shopUsers/signup',
     failureFlash: true
 }))
 
 
-
-
+//profile
+router.get('/profile', (req, res) => {
+    res.render('shopMembers/profile', {
+            success: req.flash('success')
+    })
+})
 
 
 module.exports = router;

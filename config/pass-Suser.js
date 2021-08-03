@@ -30,7 +30,6 @@ passport.use('local.signup', new localStrategy({
             }
             if (user){
                 return done(null, false, req.flash('error', 'Email already used'))
-
             }
             if (!user){
                 //Creat user
@@ -77,6 +76,9 @@ passport.use('local.login', new localStrategy({
         if(!user) {
             return done(null, false, req.flash('error', 'user was not found'))
         }
+   //     if(!user.confirmed){
+   //         return done(null, false, req.flash('error', 'user has not confirmed the account'))
+  //      }
         if (user) {
             if (user.comparePasswords(password, user.password)) {
 

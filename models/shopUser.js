@@ -26,8 +26,9 @@ const shopUserSchema = new mngoose.Schema({
         type: String,
         required: false
     },
-    facebookId:{
-
+    confirmed:{
+        type: Boolean,
+        required: false
     }
 })
 
