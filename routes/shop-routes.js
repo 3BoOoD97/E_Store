@@ -8,4 +8,14 @@ router.get('/productsView', (req, res) => {
     })
 })
 
+
+
+router.get('/asusProducts', (req, res) => {
+    res.render('shop/asusProducts', {
+    })
+})
+
+
+
+
 module.exports = router;

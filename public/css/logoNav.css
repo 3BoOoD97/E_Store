@@ -1,8 +1,8 @@
 .logoNav{
-    height: 140px;
-	width: 140px;
+    height: 70px;
+	width: 70px;
     position: absolute;
-	left: -45px;
-	top: -30px;
+	left: 1100px;
+	top: 8px;
 	z-index: 1;
 }

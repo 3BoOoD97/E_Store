@@ -1,63 +1,139 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
-*
-{
+*{
 	margin: 0;
 	padding: 0;
-	font-family: 'Poppins', sans-serif;
-}
-.Navbody
-{
-	float: right;
-	justify-content: right;
-	align-items: center;
-	min-height: 30vh;
-	background: #000;
-	overflow: hidden;
-}
-ul li
-{
-	padding-top: 20px;
-	list-style: none;
-	display: inline-block;
-}
-ul li a
-{
-	padding-right: 15px;
-	position: relative;
-	display: block;
-	color: transparent;
-	-webkit-text-stroke: 1px #fff;
-	font-size: 2.5em;
-	font-weight: 900;
-	text-decoration: none;
-	line-height: 2.2em;
-}
-ul li a:hover
-{
-	color: #fff;
-	-webkit-text-stroke: 1px #000;
-	transition: 0.5s;
-}
-ul li a:before,
-ul li a:after 
-{
-	content: attr(data-text);
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Oswald', sans-serif;
+  }
+  .wrapper{
+
+  }
+
+  .wrapper ul{
 	position: absolute;
-	top: 0;
-	left: 0;
-	transition: 0.5s;
-}
-ul li a:hover:before 
-{
-	color: #f00;
+	top: 8%;
+	left: 40%;
+	transform: translate(-50%, -50%);
+	list-style: none;
+	text-align: center;
+  }
+  .wrapper ul li{
+	display: inline;
+	margin: 15px 0;
+  }
+  .wrapper ul li a{
+	color: none;
+	text-decoration: none;
+	font-size: 40px;
+	font-weight: 500;
+	padding: 5px 40px;
+	color: #fff;
+	border-radius: 50px;
+	background: #010615;
+	position:   relative;
+	line-height: 50px;
+	transition: all 0.3s ease;
+  }
+  .wrapper ul li a:after{
+	position: absolute;
+	content: "";
+	background: #fff;
+	 background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+	/*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+	width: 104%;
+	height: 110%;
+	left: -2%;
+	top: -5%; /* if the font is 'Oswald'*/
+	border-radius: 100px;
+	transform: scaleY(0);
+	z-index: -1;
+	animation: rotate 1.5s linear infinite;
+	transition: transform 0.3s ease;
+  }
+  .wrapper ul li a:hover:after{
+	transform: scaleY(1);
+  }
+  .wrapper ul li a:hover{
+	color: #fff;
+  }
+  input[type="checkbox"]{
+	display: none;
+  }
+  .content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	text-align: center;
+	width: 100%;
+	color: #202020;
+  }
+  .content .title{
+	font-size: 40px;
+	font-weight: 700;
+  }
+  .content p{
+	font-size: 35px;
+	font-weight: 600;
+  }
+  
+  @keyframes rotate {
+	0%{
+	  filter: hue-rotate(0deg);
+	}
+	100%{
+	  filter: hue-rotate(360deg);
+	}
+  }
+  
+
+  .dropbtn {
+    background: #010615;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+	
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
-	-webkit-text-stroke: 1px #000;
-	transform: translate(10px,-10px);
-}
-ul li a:hover:after 
-{
-	color: #0ff;
-	z-index: 2;
-	-webkit-text-stroke: 1px #000;
-	transform: translate(20px,-20px);
-}
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+	  background-color: brown;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+	display: block;
+	background-color: blueviolet;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+	  background-color: blue;
+  }

@@ -2,19 +2,40 @@
 
     
 
+
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/navbar.ejs') -%>
 <%- include('../partials/ledLogo.ejs') -%>
 
+<img src="/css/asus.png"  height="150px" width="220px" class="asusTxt">
+
+<img src="https://1000logos.net/wp-content/uploads/2018/10/MSI-Logo-2009.png" height="120px" width="220px" class="msiTxt">
+<img src="https://download.logo.wine/logo/Razer_Inc./Razer_Inc.-Logo.wine.png" height="250px" width="350px" class="razTxt">
+
+<a href="/shops/asusProducts">
+<div class="imgContainer">
+  <input  type="image" id="image"class="imgeffect"
+  src="https://cdn.wallpapersafari.com/0/67/I71PfA.jpg">
+</a>
+
+    <input type="image" id="image" class="imgeffect"
+src="https://4kwallpaper.wiki/wp-content/uploads/2019/07/190775.jpg"
+  onclick="alert('d')">
+  <input type="image" id="image" class="imgeffect"
+src="https://www.wallpaperflare.com/static/923/153/195/razer-logo-wallpaper.jpg"
+  onclick="alert('d')">
+</div>
+
+
+<!--
 <div class="container">
     <div class="row py-0 mt-0" > 
     <div class="col md-1">
-   
 
         <%- include('../partials/flashMessage.ejs') -%>
     </div>
     </div>
-
+   
         <% chunk.forEach((events)=>{%> 
             <div class="row pt-5"> 
                 <% events.forEach((event)=>{%> 
@@ -26,9 +47,15 @@
                               <h5 class="card-title"><%= event.title %></h5>
                               <p class="card-text"><%= event.description %></p>
                               <p><%= event.location %></p>
-                         <!--     <p><%= event.created_at %></p>
-                              <p><%= event.date %></p>
                               -->
+
+<!--
+                          <p><%= event.created_at %></p>
+                              <p><%= event.date %></p>
+                           
+-->
+                             
+<!--
                               <a href="<%=  '/events/show/'  + event.id %>" class="btn btn-primary">Show More</a>
                             </div>
                           </div>
@@ -53,7 +80,8 @@
 
                 </div>
             </div>
-             </div>
 
+             </div>
+            -->
 
     <%- include('../partials/footer.ejs') -%>

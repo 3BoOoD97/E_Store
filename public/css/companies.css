@@ -1,0 +1,46 @@
+.imgContainer
+{
+	width: 1100px;
+	display: flex;
+    justify-content: space-between;
+	margin-bottom: 200px;
+	margin-top: -200px;
+	margin-left: 70px;
+
+}
+
+
+.imgeffect{
+	-webkit-box-reflect: below  1px linear-gradient(transparent,transparent,#0004);
+	transform-origin: center;
+	max-width: 350px;
+	transform: perspective(800px) rotateY(20deg);
+	transition: 0.5s;
+	
+}
+
+.imgContainer:hover .imgeffect
+{
+	opacity: 0.1;
+}
+.imgContainer .imgeffect:hover
+{
+	transform: perspective(800px) rotateY(0deg);
+	opacity: 1;
+}
+
+.msiTxt{
+	position: relative;
+	top: -155px;
+	left:265px;
+}
+.razTxt{
+	position: relative;
+	top: -155px;
+	left:350px;
+}
+.asusTxt{
+	position: relative;
+	top: -155px;
+	left:110px;
+}
