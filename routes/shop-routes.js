@@ -15,6 +15,15 @@ router.get('/asusProducts', (req, res) => {
     })
 })
 
+router.get('/MSIProducts', (req, res) => {
+    res.render('shop/MSIProducts', {
+    })
+})
+
+router.get('/razerProducts', (req, res) => {
+    res.render('shop/razerProducts', {
+    })
+})
 
 
 

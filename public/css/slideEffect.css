@@ -1,0 +1,38 @@
+
+
+.img-container {
+    height: 600px;
+    width: 1500px;
+    position: relative;
+    object-fit: contain;
+  
+  }
+  
+  .img-container img {
+    height: 100%;
+    width: 100%;
+    left: 180px;
+    top: 150px;
+    object-position: center;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    
+  }
+  
+  .img-container img.next {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .img-container img.prev {
+    opacity: 1;
+    z-index: 3;
+  }
+  
+  .img-container img.fade-out {
+    opacity: 0;
+    transition: visibility 0s .5s, opacity .5s linear;
+    visibility: hidden;
+  }
+  
