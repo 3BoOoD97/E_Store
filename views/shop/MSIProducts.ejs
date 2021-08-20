@@ -11,10 +11,11 @@ MSI
 
 <div class="container">	
   <div class="os-phrases" id="os-phrases">
-    <h2>Sometimes it's better</h2>
-    <h2>to hide</h2>
-    <h2>in order to</h2>
-    <h2>survive evil</h2>
+    <h2>Sometimes it's better to</h2>
+    <h2>Smooth and sharp display</h2>
+    <h2>Powered for performance</h2>
+    <h2>Power your dreams with MSI</h2>
+
     <h2>MSI</h2>
   
   </div>
@@ -23,17 +24,57 @@ MSI
 
 <div class="img-container" data-slideshow>
   
-  <img src="https://laptopmedia.com/wp-content/uploads/2020/06/msigp65leopard10sxfeatured.jpg">
+  <img src="https://bigwigpc.com/wp-content/uploads/2021/03/nv-gtx-1650-maxq.jpg">
 
   <img src="https://storage-asset.msi.com/global/picture/features/VGA/GTX1660Ti/Gaming/1660-Ti-Gaming-KV.jpg">
-  <img src="https://www.wallpapertip.com/wmimgs/29-294933_asus-rtx-2070-super.png">
+  <img src="https://slickdeals.net/blog/wp-content/uploads/2020/02/20-hero-0214-MSI-GF63-THIN-3.jpg">
+ <!--<img src="https://www.wallpapertip.com/wmimgs/29-294933_asus-rtx-2070-super.png">  --> 
   <img src="https://storage-asset.msi.com/global/picture/image/feature/mb/Z270/B250I/msi-b250i_h270i_gaming_pro_ac-memory-hero.jpg">
-  <img src="https://img3.goodfon.com/wallpaper/nbig/4/47/msi-micro-star-international.jpg">
+  <img src="https://i2.wp.com/www.tech-critter.com/wp-content/uploads/2021/02/GE76-Raider-Scenario-Photos-11.jpg?ssl=1">
+  <img src="https://virtualcustoms.net/attachment.php?attachmentid=84664&stc=1&d=1573712575">
   </div>
 
-  <div class="ledbody">
-    <div class="box">
-      <span class="glass"></span>
+  <div class="ledbodyC">
+    <div class="boxC">
+
     </div>
   </div>
+
+
+  <div class="container">
+    <div class="row py-0 mt-0" > 
+    <div class="col md-1">
+
+        <%- include('../partials/flashMessage.ejs') -%>
+    </div>
+    </div>
+   
+        <% chunk.forEach((products)=>{%> 
+            <div class="row pt-5"> 
+                <% products.forEach((product)=>{%> 
+                    <div class="col-sm-1 col-md-4">
+                        <div class="card" style="width: 18rem;">
+                          <img src="imgs/shop.png" height="150px" width="150px">
+
+                            <div class="card-body">
+                              <h5 class="card-title text-dark"><%= product.title %></h5>
+                              <p class="card-text text-dark"><%= product.description %></p>
+                              <p class="card-text text-dark"><%= product.available_stock %></p>
+                          <p class="card-text text-dark"><%= product.product_id %></p>
+                           
+                           
+<!--
+                           
+                           -->
+                           
+                            </div>
+                          </div>
+                     </div>
+                    <%})%>
+            </div>
+            <%})%>
+           
+
+
+             </div>
 <%- include('../partials/footer.ejs') -%>

@@ -1,11 +1,97 @@
 
+
     
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/navbar.ejs') -%>
-<%- include('../partials/flashMessage.ejs') -%>
 
 
-RAZER
+
+Razer
+
+
+<div class="container">	
+  <div class="os-phrases" id="os-phrases">
+    <h2>Sometimes it's better to</h2>
+    <h2>Smooth and sharp display</h2>
+    <h2>Powered for performance</h2>
+    <h2>Power your dreams with MSI</h2>
+
+    <h2>MSI</h2>
+  
+  </div>
+</div><!-- /container -->
+
+
+<div class="img-container" data-slideshow>
+  
+  <img src="https://theaxo.com/wp-content/uploads/2020/07/2020-07-27-15_08_19-ROG-Strix-G15_17-_-Laptops-_-ASUS-Global-Opera.jpg">
+
+  <img src="https://pbs.twimg.com/media/EhdlHOXU0AECsWF.jpg">
+  <img src="https://slickdeals.net/blog/wp-content/uploads/2020/02/20-hero-0214-MSI-GF63-THIN-3.jpg">
+ <!--<img src="https://www.wallpapertip.com/wmimgs/29-294933_asus-rtx-2070-super.png">  --> 
+  <img src="https://storage-asset.msi.com/global/picture/image/feature/mb/Z270/B250I/msi-b250i_h270i_gaming_pro_ac-memory-hero.jpg">
+  <img src="https://i2.wp.com/www.tech-critter.com/wp-content/uploads/2021/02/GE76-Raider-Scenario-Photos-11.jpg?ssl=1">
+  <img src="https://virtualcustoms.net/attachment.php?attachmentid=84664&stc=1&d=1573712575">
+  </div>
+
+  <div class="ledbodyC">
+    <div class="boxC">
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-3"> 
+    <div class="col md-12">
+   
+
+        <%- include('../partials/flashMessage.ejs') -%>
+    </div>
+    </div>
+
+        <% chunk.forEach((events)=>{%> 
+            <div class="row mt-3"> 
+                <% events.forEach((event)=>{%> 
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card" style="width: 18rem;">
+
+
+                            <div class="card-body">
+                              <h5 class="card-title"><%= event.title %></h5>
+                              <p class="card-text"><%= event.description %></p>
+                              <p><%= event.location %></p>
+                              <p><%= event.created_at %></p>
+                              <p><%= event.date %></p>
+                              <a href="<%=  '/events/show/'  + event.id %>" class="btn btn-primary">Show More</a>
+                            </div>
+                          </div>
+                     </div>
+                    <%})%>
+            </div>
+            <%})%>
+            <div class="row">
+                <div class="col-12 mt-2 mb-4">
+
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-lg justify-content-center">
+                            <% for (let i=1 ; i<=Math.ceil(total/5); i++) { %>
+                          <% if (pageNo == i) {%>
+                            <li class="page-item active"><a class="page-link" href="<%= '/events/' + i%>"><%= i%></a></li>
+                            <%} else {%>
+                            <li class="page-item"><a class="page-link" href="<%= '/events/' + i%>"><%= i%></a></li>
+                            <% }%>  
+                          <%}%>
+                        </ul>
+                      </nav>
+
+                </div>
+            </div>
+             </div>
+<%- include('../partials/footer.ejs') -%>
+
+
+
+
 
 <!--
 <div class="row mt-3"> 
@@ -23,4 +109,3 @@ RAZER
               </div>
          </div> 
 -->
-<%- include('../partials/footer.ejs') -%>

@@ -7,22 +7,9 @@ const flash= require('connect-flash')
 const passport = require("passport");
 //const passportSetup = require('./config/passport-setup')
 const pSU = require('./config/pass-Suser') 
+const router = express.Router();
 
-//
- FacebookStrategy = require('passport-facebook').Strategy;
 
-passport.use(new FacebookStrategy({
-    clientID: 4520719107952592,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "http://www.example.com/auth/facebook/sec"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ facebookId: profile.id}, function(err,user){
-      return done(err, user);
-    });
-  }
-));
-//
 //bring static
 app.use(express.static('public'))
 app.use(express.static('uploads'))
@@ -57,7 +44,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req,res)=>{
-  res.redirect('/events')
+  res.redirect('/shops')
 });
 
 /*

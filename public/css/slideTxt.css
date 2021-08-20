@@ -53,16 +53,16 @@ a:hover {
 
 .os-phrases h2 {
 	font-family: 'Dosis', 'Lato', sans-serif;
-	font-size: 70px;
+	font-size: 60px;
 	font-weight: 200;
 	width: 100%;
 	overflow: hidden;
 	text-transform: uppercase;
 	padding: 0;
 	margin: 0;
-
+	font-size: 40px;
 	position: absolute;
-	top: 300px;
+	top: 230px;
 	left: 0;
 	letter-spacing: 14px;
 	text-align: center;
@@ -137,6 +137,7 @@ a:hover {
 	-webkit-animation-delay: 15s;
 	-moz-animation-delay: 15s;
 	animation-delay: 15s;
+	
 }
 
 
@@ -145,9 +146,10 @@ a:hover {
 	-webkit-animation-delay: 21s;
 	-moz-animation-delay: 21s;
 	animation-delay: 21s;
-	-webkit-animation-duration: 8s;
-	-moz-animation-duration: 8s;
-	animation-duration: 8s;
+	-webkit-animation-duration: 12s;
+	-moz-animation-duration: 12s;
+	animation-duration: 12s;
+	
 }
 
 /*
@@ -193,12 +195,7 @@ a:hover {
 	}
 }
 
-.os-phrases h2:nth-child(8) > span > span > span {
-	font-size: 30px;
-	-webkit-animation: FadeIn 4s linear 40s forwards;
-	-moz-animation: FadeIn 4s linear 40s forwards;
-	animation: FadeIn 4s linear 40s forwards;
-}
+
 
 @-webkit-keyframes FadeIn { 
 	0% {

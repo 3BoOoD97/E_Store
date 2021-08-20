@@ -26,7 +26,7 @@ src="https://www.wallpaperflare.com/static/923/153/195/razer-logo-wallpaper.jpg"
 </div>
 
 
-<!--
+
 <div class="container">
     <div class="row py-0 mt-0" > 
     <div class="col md-1">
@@ -43,10 +43,10 @@ src="https://www.wallpaperflare.com/static/923/153/195/razer-logo-wallpaper.jpg"
                           <img src="imgs/shop.png" height="150px" width="150px">
 
                             <div class="card-body">
-                              <h5 class="card-title"><%= event.title %></h5>
-                              <p class="card-text"><%= event.description %></p>
-                              <p><%= event.location %></p>
-                              -->
+                              <h5 class="card-title text-dark"><%= event.title %></h5>
+                              <p class="card-text text-dark"><%= event.description %></p>
+                              <p class="card-text text-dark"><%= event.location %></p>
+                           
 
 <!--
                           <p><%= event.created_at %></p>
@@ -54,8 +54,7 @@ src="https://www.wallpaperflare.com/static/923/153/195/razer-logo-wallpaper.jpg"
                            
 -->
                              
-<!--
-                              <a href="<%=  '/events/show/'  + event.id %>" class="btn btn-primary">Show More</a>
+                    <a href="<%=  '/events/show/'  + event.id %>" class="btn btn-primary">Show More</a>
                             </div>
                           </div>
                      </div>
@@ -81,6 +80,6 @@ src="https://www.wallpaperflare.com/static/923/153/195/razer-logo-wallpaper.jpg"
             </div>
 
              </div>
-            -->
+           
 
     <%- include('../partials/footer.ejs') -%>

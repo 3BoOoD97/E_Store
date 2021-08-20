@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Product = require('../models/product')
 
 
 
@@ -16,14 +17,89 @@ router.get('/asusProducts', (req, res) => {
 })
 
 router.get('/MSIProducts', (req, res) => {
-    res.render('shop/MSIProducts', {
-    })
+    Product.find({'description': 'msi'},{},(err,products)=>{
+        // res.json(events)
+        let chunk = []
+        let chunkSize = 3
+        for(let i=0; i<products.length; i+=chunkSize){
+            chunk.push(products.slice(i, chunkSize+i))
+        }
+        //res.json(chunk)
+        res.render('shop/MSIProducts', {
+            chunk: chunk,
+            message: req.flash('info'),
+           // total: parseInt(totalDoc),
+         //   pageNo: pageNo
+        })
+     })
 })
+
+
 
 router.get('/razerProducts', (req, res) => {
     res.render('shop/razerProducts', {
     })
 })
+
+
+router.get('/:pageNo?', (req,res)=> {
+
+    let Pro= new Product({
+        title: "k",
+        description: "msi",
+        available_stock: 4,
+        product_id: "123",
+        
+    })
+    Pro.save((err)=>{
+        if(!err){
+            console.log("ADDED")
+           /* res.redirect('/shops') */
+        }
+        else{
+            console.log("error")
+        }
+    }) 
+
+    let pageNo = 1
+
+    if(req.params.pageNo){
+        pageNo  = parseInt(req.params.pageNo)
+    }
+    if(req.params.pageNo == 0){
+        pageNo= 1
+    }
+
+    let q = {
+        skip: 5*(pageNo-1),
+        limit: 5
+    }
+
+    // find total records
+    let totalDoc = 0
+    Product.countDocuments({}, (err, total)=>{
+
+    }).then((response)=>{
+        totalDoc = parseInt(response)
+
+        Product.find({},{},q,(err,products)=>{
+            // res.json(events)
+            let chunk = []
+            let chunkSize = 3
+            for(let i=0; i<products.length; i+=chunkSize){
+                chunk.push(products.slice(i, chunkSize+i))
+            }
+            //res.json(chunk)
+            res.render('shop/index', {
+                chunk: chunk,
+                message: req.flash('info'),
+                total: parseInt(totalDoc),
+                pageNo: pageNo
+            })
+         })
+    })
+})
+
 
 
 

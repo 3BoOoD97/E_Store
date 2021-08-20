@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost:27017/eventsDBS' , (err)=> {
         console.log(err)
     }
     else{
-        console.log("work data")
+        console.log("Database Working")
 
     }
 })
