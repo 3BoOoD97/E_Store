@@ -42,4 +42,12 @@ router.get('/profile', (req, res) => {
     })
 })
 
+
+router.get('/adminProfile', (req, res) => {
+    res.render('shopMembers/adminProfile', {
+            success: req.flash('success')
+    })
+})
+
+
 module.exports = router;
