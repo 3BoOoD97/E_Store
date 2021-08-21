@@ -12,11 +12,10 @@
                 <div class="card" style="width: 33rem;">
                     
                     <div class="card-body text-dark">
-                        <h5 class="card-title "><%= product_id %></h5>
-
                       <h5 class="card-title "><%= product.title %></h5>
                       <p class="card-text"><%= product.description %></p>
                       <p><%= product.location %></p>
+                     
 
                       <% if ((user) && (user.id == event.user_id)) {%>
                       <a href="<%= '/events/edit/' + event.id%>" class="btn btn-primary">Edit</a>

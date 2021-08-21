@@ -101,6 +101,14 @@ router.get('/:pageNo?', (req,res)=> {
 })
 
 
-
+router.get('/show/:id', (req,res)=> {
+    Product.findOne({_id: req.params.id}, (err,product)=>{
+        if(!err){
+        res.render('shop/show', {
+            product: product
+        })
+        }
+    })
+})
 
 module.exports = router;
