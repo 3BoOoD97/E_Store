@@ -17,8 +17,11 @@ router.get('/asusProducts', (req, res) => {
 })
 
 router.get('/MSIProducts', (req, res) => {
+    let i = 0;
     Product.find({'description': 'msi'},{},(err,products)=>{
         // res.json(events)
+        i++;
+        console.log(i)
         let chunk = []
         let chunkSize = 3
         for(let i=0; i<products.length; i+=chunkSize){

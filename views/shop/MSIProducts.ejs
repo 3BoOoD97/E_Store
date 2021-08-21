@@ -75,11 +75,9 @@ MSI
 
         <img id="cartIcon" src="http://www.seoulstore.in/demo/images/static/shopping-cart.png" top="-500px" height="50px" >
         <div id="wrapper">
-            <div class="cart-icon-top">
-            </div>
+  
             <div class="cart-icon-bottom">
             </div>
-    
             <div id="checkout">
                 CHECKOUT
             </div>
@@ -87,12 +85,22 @@ MSI
                     <span class="empty"></span>       
                 </div>   
         
-            <div id="grid">
-        
+            
+                <div class="container">
+                    <div class="row py-0 mt-5" > 
+                    <div class="col md-1">
+                    </div>
+                </div>
+                
+                <div id="grid">
+
 
               <% chunk.forEach((products)=>{%> 
+                <div class="row pt-5"> 
+
                     <% products.forEach((product)=>{%> 
-                     
+                        <div class="col-sm-1 col-md-4">
+
                       <div class="product">
                         <div class="info-large">       
                         </div>
@@ -110,66 +118,48 @@ MSI
                                         <p><%= product.description %></p>                                            
                                         
                                         <div class="product-options">
-                                        <strong>SIZES</strong>
+                                        <strong>available_stock</strong>
                                         <span><%= product.available_stock %></span>
-                                        <strong>COLORS</strong>
-                                        <div class="colors">
-                                            <div class="c-blue"><span></span></div>
-                                            <div class="c-red"><span></span></div>
-                                            <div class="c-white"><span></span></div>
-                                            <div class="c-green"><span></span></div>
-                                        </div>
+                                        
                                     </div>                       
                                     </div>                         
                                 </div>
                             </div>
-
-
-
-
-
+                            
                             <div class="product-back">
-                              <div class="shadow"></div>
-                              <div class="carousel">
-                                  <ul class="carousel-container">
-                                      <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg" alt="" /></li>
-                                      <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2.jpg" alt="" /></li>
-                                      <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3.jpg" alt="" /></li>
-                                  </ul>
-                                  <div class="arrows-perspective">
-                                      <div class="carouselPrev">
-                                          <div class="y"></div>
-                                          <div class="x"></div>
-                                      </div>
-                                      <div class="carouselNext">
-                                          <div class="y"></div>
-                                          <div class="x"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="flip-back">
-                                  <div class="cy"></div>
-                                  <div class="cx"></div>
-                              </div>
-                          </div>	  
-                      </div>	
-                  </div>
-
-
-
-
-
-
-                               
-                               
-                            </div>
-                          </div>
-                     </div>
+                                <div class="shadow"></div>
+                                <div class="carousel">
+                                    <ul class="carousel-container">
+                                        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg" alt="" /></li>
+                                        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2.jpg" alt="" /></li>
+                                        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3.jpg" alt="" /></li>
+                                    </ul>
+                                    <div class="arrows-perspective">
+                                        <div class="carouselPrev">
+                                            <div class="y"></div>
+                                            <div class="x"></div>
+                                        </div>
+                                        <div class="carouselNext">
+                                            <div class="y"></div>
+                                            <div class="x"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-back">
+                                    <div class="cy"></div>
+                                    <div class="cx"></div>
+                                </div>
+                            </div>	  
+                        </div>	
+                    </div>
+                    
+                </div>    
                     <%})%>
             </div>
             <%})%>
 
-         </div>
+         
+       
        
    
 <%- include('../partials/footer.ejs') -%>
