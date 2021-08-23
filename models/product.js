@@ -23,6 +23,15 @@ const productSchema = new mngoose.Schema({
         required: true
     },
 
+    price:{
+        type: Number,
+        required: true
+    },
+
+    manufacturer:{
+        type: String,
+        required: true
+    }
 /*
     proImg: {
         type: String,

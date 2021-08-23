@@ -3,7 +3,7 @@
                     <%- include('../partials/header.ejs') -%>
                   
 
-
+                    <% if (!user) {%>
                     <div class="open-modal text-center">
                       <a href="#myModal" class="btn btn-danger trigger-btn " data-toggle="modal" >
                         <img src="https://www.thecro.in/wp-content/uploads/2017/03/general-member.png" height="70px" width="70px">
@@ -44,19 +44,24 @@
                        
                         <div class="mt-3">
                          <a href="/shopUsers/signup">Signup!</a>
-                       </div>
-   
-
-
-                     
-                      </div>
-                   
+                       </div>           
+                      </div>    
                       </div>
                       </div>
                       </div>
                       </div>
 
+                      <% } else {%> 
 
+<div class="open-modal text-center mt-3">
+
+  <button type="button" class="btn btn-outline-danger btn-lg ">
+  <a href="/shopUsers/logout">Log out</a>
+
+
+                          </button>
+</div>
+                        <% } %>
 
 
 
@@ -74,7 +79,7 @@
 <!-- If the user is Admin show Admin btn-->
 <% if ((user) && (user.email == "abodn70@hotmail.com")) {%>
                        
-  <li><a href="shopUsers/adminProfile" id="admin">Admin</a></li>
+  <li><a href="/shopUsers/adminProfile" id="admin" style="color:red">Admin</a></li>
   <% }%>
 
 

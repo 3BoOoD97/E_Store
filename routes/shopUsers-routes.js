@@ -43,11 +43,24 @@ router.get('/profile', (req, res) => {
 })
 
 
-router.get('/adminProfile', (req, res) => {
+
+router.get('/adminProfile', (req, res)=>{
+    if (req.user.email != 'abodn70@hotmail.com') {
+        // disallowed
+     //    res.sendError(401);
+        res.status(401).send("msg");
+
+      } else {
     res.render('shopMembers/adminProfile', {
             success: req.flash('success')
     })
+}
 })
 
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/shopUsers/login');
+  })
 
 module.exports = router;

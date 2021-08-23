@@ -17,11 +17,10 @@ router.get('/asusProducts', (req, res) => {
 })
 
 router.get('/MSIProducts', (req, res) => {
-    let i = 0;
+
     Product.find({'description': 'msi'},{},(err,products)=>{
         // res.json(events)
-        i++;
-        console.log(i)
+    
         let chunk = []
         let chunkSize = 3
         for(let i=0; i<products.length; i+=chunkSize){
@@ -49,20 +48,23 @@ router.get('/:pageNo?', (req,res)=> {
 
     let Pro= new Product({
         title: "k",
-        description: "msi",
+        description: "Core I7",
         available_stock: 4,
-        product_id: "123",
+        product_id: "1",
+        price: 500,
+        manufacturer :"MSI"
         
     })
     Pro.save((err)=>{
         if(!err){
             console.log("ADDED")
-           /* res.redirect('/shops') */
+      /*    res.redirect('/shops') */
         }
         else{
             console.log("error")
         }
     }) 
+ 
 
     let pageNo = 1
 

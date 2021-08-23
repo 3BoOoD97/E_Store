@@ -65,6 +65,13 @@ app.use('/shops', shops)
 const shopUsers = require ('./routes/shopUsers-routes')
 app.use('/shopUsers', shopUsers)
 
+
+//bring Admin routes
+const shopAdmin = require ('./routes/admin-routes')
+app.use('/shopAdmin', shopAdmin)
+
+
+
 // Since Facebook have been requiring usage of HTTPS for our redirect URIs
 app.get('/auth/facebook',
   passport.authenticate('facebook', { scope: 'read_stream' })

@@ -13,7 +13,13 @@
 
                 <%- include('../partials/flashMessage.ejs') -%>
 
-
+                <p>
+                    <% if (user) { %>
+                        Welcome <%= user.firstName +" "+ user.lastName%>
+                        
+                        Welcome .. your Email is <%= user.email %>
+                        <% }%>
+                </p>
 
 
 
