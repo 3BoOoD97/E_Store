@@ -9,6 +9,7 @@
         <th scope="col">Product Name</th>
         <th scope="col">Product Price</th>
         <th scope="col">Available Stock</th>
+        <th scope="col">Manufacturer</th>
       </tr>
     </thead>
     <tbody>
@@ -18,9 +19,10 @@
 
         <th scope="row">1</th>
         <td><%= product.title %></td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td> <a class="btn btn-primary" href="#" role="button">Link</a> </td> 
+        <td><%= product.price %></td>
+        <td><%= product.available_stock %></td>
+        <td><%= product.manufacturer %></td>
+        <td> <a class="btn btn-primary" href="#" role="button">Edit</a> </td> 
       </tr>
 
     </tbody>

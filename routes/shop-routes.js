@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Product = require('../models/product')
+const mngoose = require("mongoose")
 
 
 
@@ -12,13 +13,30 @@ router.get('/productsView', (req, res) => {
 
 
 router.get('/asusProducts', (req, res) => {
-    res.render('shop/asusProducts', {
-    })
+
+
+    Product.find({'manufacturer': 'ASUS'},{},(err,products)=>{
+        // res.json(events)
+    
+        let chunk = []
+        let chunkSize = 3
+        for(let i=0; i<products.length; i+=chunkSize){
+            chunk.push(products.slice(i, chunkSize+i))
+        }
+        //res.json(chunk)
+        res.render('shop/asusProducts', {
+            chunk: chunk,
+            message: req.flash('info'),
+           // total: parseInt(totalDoc),
+         //   pageNo: pageNo
+        })
+     })
 })
+
 
 router.get('/MSIProducts', (req, res) => {
 
-    Product.find({'description': 'msi'},{},(err,products)=>{
+    Product.find({'manufacturer': 'MSI'},{},(err,products)=>{
         // res.json(events)
     
         let chunk = []
@@ -44,27 +62,12 @@ router.get('/razerProducts', (req, res) => {
 })
 
 
+
+
+
 router.get('/:pageNo?', (req,res)=> {
 
-    let Pro= new Product({
-        title: "k",
-        description: "Core I7",
-        available_stock: 4,
-        product_id: "1",
-        price: 500,
-        manufacturer :"MSI"
-        
-    })
-    Pro.save((err)=>{
-        if(!err){
-            console.log("ADDED")
-      /*    res.redirect('/shops') */
-        }
-        else{
-            console.log("error")
-        }
-    }) 
- 
+
 
     let pageNo = 1
 
@@ -106,14 +109,5 @@ router.get('/:pageNo?', (req,res)=> {
 })
 
 
-router.get('/show/:id', (req,res)=> {
-    Product.findOne({_id: req.params.id}, (err,product)=>{
-        if(!err){
-        res.render('shop/show', {
-            product: product
-        })
-        }
-    })
-})
 
 module.exports = router;
