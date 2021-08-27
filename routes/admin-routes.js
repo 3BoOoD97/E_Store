@@ -8,6 +8,29 @@ const mngoose = require("mongoose")
 
 
 
+
+const multer = require("multer")
+//config multer
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/imgs')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname + '-' + Date.now() + '.png' )
+    }
+  })
+   
+  var upload = multer({ storage: storage,
+    limits: {
+        fieldSize: 1024 * 1024 * 3,
+      },
+    });
+
+    var uploadMultiple = upload.fields([{ name: 'file1', maxCount: 10 }, { name: 'file2', maxCount: 10 }])
+
+
+
+
 router.get('/editProducts', (req, res) => {
 
     Product.find({},{},(err,products)=>{
@@ -33,37 +56,60 @@ router.get('/editProducts', (req, res) => {
 
 router.get('/addProduct', (req, res) => {
     res.render('admin/addProduct', {
+        message: req.flash('info'),
+        errors: req.flash('errors'),
+
     })
 })
 
 
-router.post('/addProduct', (req,res) => {
+router.post('/addProduct',
+/*
+[
+    check('title').isLength({min: 3}).withMessage('Title should be more than five'),
+    check('description').isLength({min: 5}).withMessage('description should be more than five'),
+    check('available_stock').isLength({min: 1}).withMessage('location should be more than five'),
+    check('price').isLength({min: 1}).withMessage('The price is'),
+    check('manufacturer').isLength({min: 3}).withMessage('manufacturer should be valid'),
+
+
+],
+
+*/
+upload.single('image'), (req,res)=> {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
         req.flash('errors', errors.array())
-        res.redirect('/admin/addProduct')
+        res.redirect('/shopAdmin/addProduct')
     }
+    
+    else {
     
     let Pro= new Product({
         title: req.body.ProName,
         description: req.body.ProDes,
         available_stock: req.body.ProAvStk,
         price: req.body.ProPrice,
-       manufacturer : req.body.ProManu
-
+       manufacturer : req.body.ProManu,
+       proImg: req.file.filename,
     })
 
     Pro.save((err)=>{
         if(!err){
             console.log("ADDED ")
-      /*    res.redirect('/shops') */
+            req.flash('info', 'The Product Was Added Successfuly')
+            res.redirect('/shopAdmin/addProduct')
         }
         else{
             console.log("error")
+            req.flash('error', 'The Product Was Added Successfuly')
+            res.redirect('/shopAdmin/addProduct')
+
+
         }
-    }) 
-  })
+    })    }
+})
 
 
 

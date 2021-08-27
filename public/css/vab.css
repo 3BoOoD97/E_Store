@@ -14,10 +14,10 @@
 
 
  .heartbeat {
-    height: 233px;
-	width: 233px;
+    height: 250px;
+	width: 250px;
     position: absolute;
-	left: 490px;
+	left: 590px;
 	top: 272px;
 	z-index: 1;
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;

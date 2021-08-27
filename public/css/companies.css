@@ -3,14 +3,14 @@
 	width: 1100px;
 	display: flex;
     justify-content: space-between;
-	margin-bottom: 200px;
-	margin-top: -200px;
-	margin-left: 70px;
+	margin-top: -400px;
+	margin-left: 110px;
 
 }
 
 
 .imgeffect{
+	
 	-webkit-box-reflect: below  1px linear-gradient(transparent,transparent,#0004);
 	transform-origin: center;
 	max-width: 350px;
@@ -37,7 +37,7 @@
 .razTxt{
 	position: relative;
 	top: -155px;
-	left:350px;
+	left:380px;
 }
 .asusTxt{
 	position: relative;

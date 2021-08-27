@@ -29,8 +29,7 @@
 /**** Product *****/
 
 .product{
-	top: 630px;
-	left: -77px;
+	top: 700px;
     position: relative;
     perspective: 800px;
     width:306px;
@@ -50,7 +49,7 @@
 .product-front img{width:100%;}
 .product-front, .product-back{
 	width:315px;
-	height:480px;
+	height:400px;
 	background:#fff;
 	position:absolute;
 	left:-5px;
@@ -139,7 +138,7 @@ div.large .make3D{
 .large div.make3D{box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0);}
 .large div.flip-back{display:none;}
 .stats-container{
-	background:rgb(86, 95, 94);	
+	background:#fff;	
 	position:absolute;
 	top:382px;
 	left:0;
@@ -174,20 +173,15 @@ div.large .make3D{
 	font-size:22px;
 	font-weight:600;
 }
-
-
 .image_overlay{
 	position:absolute;
 	top:0;
 	left:0; 
 	width:100%;
 	height:100%;
-	background:#172c27;
+	background:#5ff7d2;
 	opacity:0;	
 }
-
-
-
 .make3D.animate .image_overlay{
 	opacity:0.7;	
 	-webkit-transition: all 200ms ease-out; 
@@ -558,7 +552,7 @@ div.cart-icon-bottom{
 */
 #cartIcon {
     position:sticky;
-	top: 22px;
+	top: 103px;
 	left: 90px;
   }
 

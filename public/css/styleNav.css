@@ -11,8 +11,8 @@
 
   .wrapper ul{
 	position: absolute;
-	top: 8%;
-	left: 40%;
+	top: 60px;
+	left: 500px;
 	transform: translate(-50%, -50%);
 	list-style: none;
 	text-align: center;
