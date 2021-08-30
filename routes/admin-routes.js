@@ -26,7 +26,8 @@ var storage = multer.diskStorage({
       },
     });
 
-    var uploadMultiple = upload.fields([{ name: 'file1', maxCount: 10 }, { name: 'file2', maxCount: 10 }])
+    var uploadMultiple = upload.fields([{ name: 'image', maxCount: 10 }, { name: 'image2', maxCount: 10 } , 
+    { name: 'image3', maxCount: 10 }])
 
 
 
@@ -53,6 +54,18 @@ router.get('/editProducts', (req, res) => {
 
 
 
+router.get('/edit/:id' , (req, res) => {
+    Product.findOne({_id: req.params.id}, (err,product)=>{
+        console.log(req.params.id)
+
+        if(!err){
+            console.log(req.params.id)
+    res.render('admin/edit', {
+        product: product
+    })
+}
+})
+})
 
 router.get('/addProduct', (req, res) => {
     res.render('admin/addProduct', {
@@ -103,7 +116,7 @@ upload.single('image'), (req,res)=> {
         }
         else{
             console.log("error")
-            req.flash('error', 'The Product Was Added Successfuly')
+            req.flash('error', 'The Product Was not Added')
             res.redirect('/shopAdmin/addProduct')
 
 

@@ -10,7 +10,7 @@
 
 
 .imgeffect{
-	
+	margin-left: 40px;
 	-webkit-box-reflect: below  1px linear-gradient(transparent,transparent,#0004);
 	transform-origin: center;
 	max-width: 350px;
@@ -32,15 +32,15 @@
 .msiTxt{
 	position: relative;
 	top: -155px;
-	left:265px;
+	left:365px;
 }
 .razTxt{
 	position: relative;
 	top: -155px;
-	left:380px;
+	left:473px;
 }
 .asusTxt{
 	position: relative;
 	top: -155px;
-	left:110px;
+	left:210px;
 }

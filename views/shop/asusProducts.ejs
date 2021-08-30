@@ -24,14 +24,14 @@ ASUS
 
 <div class="img-container" data-slideshow>
   
-  <img src="https://theaxo.com/wp-content/uploads/2020/07/2020-07-27-15_08_19-ROG-Strix-G15_17-_-Laptops-_-ASUS-Global-Opera.jpg">
+  <img src="/imgs/asus1.jpg">
 
-  <img src="https://pbs.twimg.com/media/EhdlHOXU0AECsWF.jpg">
-  <img src="https://slickdeals.net/blog/wp-content/uploads/2020/02/20-hero-0214-MSI-GF63-THIN-3.jpg">
+  <img src="/imgs/asus2.jpg">
+  <img src="/imgs/asus3.jpg">
  <!--<img src="https://www.wallpapertip.com/wmimgs/29-294933_asus-rtx-2070-super.png">  --> 
-  <img src="https://storage-asset.msi.com/global/picture/image/feature/mb/Z270/B250I/msi-b250i_h270i_gaming_pro_ac-memory-hero.jpg">
-  <img src="https://i2.wp.com/www.tech-critter.com/wp-content/uploads/2021/02/GE76-Raider-Scenario-Photos-11.jpg?ssl=1">
-  <img src="https://virtualcustoms.net/attachment.php?attachmentid=84664&stc=1&d=1573712575">
+  <img src="/imgs/asus4.jpg">
+  <img src="/imgs/asus5.jpg">
+  <img src="/imgs/asus6.jpg">
   </div>
 
   <div class="ledbodyC">
@@ -42,19 +42,18 @@ ASUS
 
 
 
-
-  <img id="cartIcon" src="http://www.seoulstore.in/demo/images/static/shopping-cart.png" top="-500px" height="50px" >
   <div id="wrapper">
 
-      <div class="cart-icon-bottom">
-      </div>
+
+    
       <div id="checkout">
           CHECKOUT
       </div>
           <div id="cart">
               <span class="empty"></span>       
           </div>   
-  
+          <img id="cartIcon" src="http://www.seoulstore.in/demo/images/static/shopping-cart.png"  height="50px" >
+
       
           <div class="container">
               <div class="row py-0 mt-5" > 
@@ -83,12 +82,12 @@ ASUS
                           <div class="view_gallery">View gallery</div>                
                           <div class="stats">        	
                               <div class="stats-container">
-                                  <span class="product_price">$39</span>
+                                  <span class="product_price"><%= product.price %> $</span>
                                   <span class="product_name"><%= product.title %></span>    
                                   <p><%= product.description %></p>                                            
                                   
                                   <div class="product-options">
-                                  <strong>available_stock</strong>
+                                  <strong>Available Stock</strong>
                                   <span><%= product.available_stock %></span>
                                   
                               </div>                       

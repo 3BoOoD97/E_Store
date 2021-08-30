@@ -43,7 +43,19 @@ const productSchema = new mngoose.Schema({
         type: String,
         required: true
 
-    }
+    },
+
+    proImg1: {
+        type: String,
+        required: false
+
+    },
+
+    proImg2: {
+        type: String,
+        required: false
+
+    },
 })
 
 let Product = mngoose.model('Product', productSchema, 'products');

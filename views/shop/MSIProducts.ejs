@@ -41,37 +41,9 @@ MSI
     </div>
   </div>
 
-<!--
-  <div class="container">
-    <div class="row py-0 mt-0" > 
-    <div class="col md-1">
 
-        <%- include('../partials/flashMessage.ejs') -%>
-    </div>
-    </div>
-   
-        <% chunk.forEach((products)=>{%> 
-            <div class="row pt-5"> 
-                <% products.forEach((product)=>{%> 
-                    <div class="col-sm-1 col-md-4">
-                        <div class="card" style="width: 18rem;">
-                          <img src="imgs/shop.png" height="150px" width="150px">
 
-                            <div class="card-body">
-                              <h5 class="card-title text-dark"><%= product.title %></h5>
-                              <p class="card-text text-dark"><%= product.description %></p>
-                              <p class="card-text text-dark"><%= product.available_stock %></p>
-                          <p class="card-text text-dark"><%= product.product_id %></p>
-                           
-                           
-                          <a href="<%=  '/shops/show/'  + product.id %>" class="btn btn-primary">Show More</a>
-                        </div>
-                      </div>
-                 </div>
-                <%})%>
-        </div>
-        <%})%>
-        -->
+  
 
         <img id="cartIcon" src="http://www.seoulstore.in/demo/images/static/shopping-cart.png" top="-500px" height="50px" >
         <div id="wrapper">
