@@ -32,7 +32,7 @@ var storage = multer.diskStorage({
 
 
 
-router.get('/editProducts', (req, res) => {
+router.get('/showToEdit', (req, res) => {
 
     Product.find({},{},(err,products)=>{
         // res.json(events)
@@ -43,7 +43,7 @@ router.get('/editProducts', (req, res) => {
             chunk.push(products.slice(i, chunkSize+i))
         }
         //res.json(chunk)
-        res.render('admin/editProducts', {
+        res.render('admin/showToEdit', {
             chunk: chunk,
             message: req.flash('info'),
            // total: parseInt(totalDoc),
@@ -56,16 +56,39 @@ router.get('/editProducts', (req, res) => {
 
 router.get('/edit/:id' , (req, res) => {
     Product.findOne({_id: req.params.id}, (err,product)=>{
-        console.log(req.params.id)
-
         if(!err){
-            console.log(req.params.id)
     res.render('admin/edit', {
         product: product
     })
 }
 })
 })
+
+
+router.post('/update',upload.single('image'), (req, res)=>{
+    let newObj = {
+        title: req.body.ProName,
+        description: req.body.ProDes,
+        available_stock: req.body.ProAvStk,
+        price: req.body.ProPrice,
+       manufacturer : req.body.ProManu,
+       proImg: req.file.filename,
+
+    }
+
+    let query = {_id: req.body.id}
+    Product.updateOne(query, newObj, (err)=>{
+        if(!err){
+            req.flash('info', "The event was updated succesfuly")
+            res.redirect('/shopAdmin/showToEdit')
+
+        }
+        else{
+            console.log("error")
+        }
+    })
+})
+
 
 router.get('/addProduct', (req, res) => {
     res.render('admin/addProduct', {

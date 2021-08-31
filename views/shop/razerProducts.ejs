@@ -1,22 +1,15 @@
 
-
-    
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/navbar.ejs') -%>
 
-
-
-Razer
-
-
 <div class="container">	
   <div class="os-phrases" id="os-phrases">
-    <h2>Sometimes it's better to</h2>
-    <h2>Smooth and sharp display</h2>
-    <h2>Powered for performance</h2>
-    <h2>Power your dreams with MSI</h2>
+    <h2>Elegant design</h2>
+    <h2>extraordinary capabilities</h2>
+    <h2>Removable keyboard</h2>
+    <h2>Performance meets productivity</h2>
 
-    <h2>MSI</h2>
+    <h2>RAZER</h2>
   
   </div>
 </div><!-- /container -->
@@ -24,14 +17,14 @@ Razer
 
 <div class="img-container" data-slideshow>
   
-  <img src="https://theaxo.com/wp-content/uploads/2020/07/2020-07-27-15_08_19-ROG-Strix-G15_17-_-Laptops-_-ASUS-Global-Opera.jpg">
+  <img src="https://assets2.razerzone.com/images/og-image/Razer-Products-OGimage-1200x630.jpg">
 
-  <img src="https://pbs.twimg.com/media/EhdlHOXU0AECsWF.jpg">
-  <img src="https://slickdeals.net/blog/wp-content/uploads/2020/02/20-hero-0214-MSI-GF63-THIN-3.jpg">
+  <img src="https://cdn.mos.cms.futurecdn.net/JDCjAU56r3mMBJQrnWGxSn.jpg">
+  <img src="https://46c4ts1tskv22sdav81j9c69-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/2/2019/10/5cf4c5fdbfe2b4240d2444bfa0744b8c.jpg">
  <!--<img src="https://www.wallpapertip.com/wmimgs/29-294933_asus-rtx-2070-super.png">  --> 
-  <img src="https://storage-asset.msi.com/global/picture/image/feature/mb/Z270/B250I/msi-b250i_h270i_gaming_pro_ac-memory-hero.jpg">
-  <img src="https://i2.wp.com/www.tech-critter.com/wp-content/uploads/2021/02/GE76-Raider-Scenario-Photos-11.jpg?ssl=1">
-  <img src="https://virtualcustoms.net/attachment.php?attachmentid=84664&stc=1&d=1573712575">
+  <img src="https://thegadgetflow.com/wp-content/uploads/2018/05/razer-blade-15-gaming-laptop-09.jpg">
+  <img src="https://www.allround-pc.com/wp-content/uploads/2020/04/Razer-Blade-15-Early-2020-Produktbild-1112x625.jpg">
+  <img src="https://miro.medium.com/max/7644/1*ufbFn2AL43YwYbhgBjF5hA.jpeg">
   </div>
 
   <div class="ledbodyC">
@@ -39,73 +32,104 @@ Razer
 
     </div>
   </div>
-
+  <img src="https://download.logo.wine/logo/Razer_Inc./Razer_Inc.-Logo.wine.png" height="250px" width="390px" class="companyLogo">
+  <p style = "font-family:courier,arial,helvetica;" class="RazCompanyInfo">
+  You'll discover a full arsenal of gaming laptops to suit your needs - whether for work or play. 
+  And you can enjoy only the best graphics on a super screen, backed by a system running the 
+  latest technology.</p>
   <div class="container">
     <div class="row mt-3"> 
     <div class="col md-12">
+    </div>
+    </div>
+
+    
+    <img id="cartIcon" src="http://www.seoulstore.in/demo/images/static/shopping-cart.png" top="-500px" height="50px" >
+    <div id="wrapper">
+
+        <div class="cart-icon-bottom">
+        </div>
+        <div id="checkout">
+            CHECKOUT
+        </div>
+            <div id="cart">
+                <span class="empty"></span>       
+            </div>   
+    
+        
+            <div class="container">
+                <div class="row py-0 mt-5" > 
+                <div class="col md-1">
+                </div>
+            </div>
+            
+            <div id="grid">
+
+
+            <div class="row pt-5"> 
+                <% products.forEach((product)=>{%> 
+
+                    <div class="col-sm-1 col-md-4">
+
+                  <div class="product">
+                    <div class="info-large">       
+                    </div>
+                    <div class="make3D">
+                        <div class="product-front">
+                            <div class="shadow"></div>
+                            <img src="<%= '/imgs/' + product.proImg%>" alt=""/>
+                            <div class="image_overlay"></div>
+                            <div class="add_to_cart">Add to cart</div>
+                            <div class="view_gallery">View gallery</div>                
+                            <div class="stats">        	
+                                <div class="stats-container">
+                                    <span class="product_price">$39</span>
+                                    <span class="product_name"><%= product.title %></span>    
+                                    <p><%= product.description %></p>                                            
+                                    
+                                    <div class="product-options">
+                                    <strong>available_stock</strong>
+                                    <span><%= product.available_stock %></span>
+                                    
+                                </div>                       
+                                </div>                         
+                            </div>
+                        </div>
+                        
+                        <div class="product-back">
+                            <div class="shadow"></div>
+                            <div class="carousel">
+                                <ul class="carousel-container">
+                                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1.jpg" alt="" /></li>
+                                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2.jpg" alt="" /></li>
+                                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3.jpg" alt="" /></li>
+                                </ul>
+                                <div class="arrows-perspective">
+                                    <div class="carouselPrev">
+                                        <div class="y"></div>
+                                        <div class="x"></div>
+                                    </div>
+                                    <div class="carouselNext">
+                                        <div class="y"></div>
+                                        <div class="x"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="cy"></div>
+                                <div class="cx"></div>
+                            </div>
+                        </div>	  
+                    </div>	
+                </div>
+                
+            </div>    
+                <%})%>
+        </div>
+
+
+     
+   
    
 
-        <%- include('../partials/flashMessage.ejs') -%>
-    </div>
-    </div>
-
-        <% chunk.forEach((events)=>{%> 
-            <div class="row mt-3"> 
-                <% events.forEach((event)=>{%> 
-                    <div class="col-sm-6 col-md-4">
-                        <div class="card" style="width: 18rem;">
-
-
-                            <div class="card-body">
-                              <h5 class="card-title"><%= event.title %></h5>
-                              <p class="card-text"><%= event.description %></p>
-                              <p><%= event.location %></p>
-                              <p><%= event.created_at %></p>
-                              <p><%= event.date %></p>
-                              <a href="<%=  '/events/show/'  + event.id %>" class="btn btn-primary">Show More</a>
-                            </div>
-                          </div>
-                     </div>
-                    <%})%>
-            </div>
-            <%})%>
-            <div class="row">
-                <div class="col-12 mt-2 mb-4">
-
-                    <nav aria-label="...">
-                        <ul class="pagination pagination-lg justify-content-center">
-                            <% for (let i=1 ; i<=Math.ceil(total/5); i++) { %>
-                          <% if (pageNo == i) {%>
-                            <li class="page-item active"><a class="page-link" href="<%= '/events/' + i%>"><%= i%></a></li>
-                            <%} else {%>
-                            <li class="page-item"><a class="page-link" href="<%= '/events/' + i%>"><%= i%></a></li>
-                            <% }%>  
-                          <%}%>
-                        </ul>
-                      </nav>
-
-                </div>
-            </div>
-             </div>
 <%- include('../partials/footer.ejs') -%>
-
-
-
-
-
-<!--
-<div class="row mt-3"> 
-        <div class="col-sm-6 col-md-4">
-            <div class="card" style="width: 18rem;">
-              <img src="imgs/shop.png" height="150px" width="150px">
-
-                <div class="card-body">
-                  <h5 class="card-title"><Title></Title></h5>
-                  <p class="card-text">Des</p>
-                  
-          
-                  <a href="" class="btn btn-primary">Show More</a>
-                </div>
-              </div>
-         </div> 
--->

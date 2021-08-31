@@ -1,0 +1,58 @@
+.buttonEdit {
+  display: inline-block;
+  padding: 20px 40px;
+  margin-right: 50px;
+  border: 1px solid black;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #ebebeb), color-stop(50%, red));
+  background: linear-gradient(to left, #ebebeb 50%, red 50%);
+  background-size: 200% 100%;
+  cursor: pointer;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+.btn-l-r {
+  background-position: right top;
+}
+
+.btn-l-r:hover {
+  background-position: left top;
+  color: white;
+}
+
+.btn-r-l {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ebebeb), color-stop(50%, red));
+  background: linear-gradient(to right, #ebebeb 50%, red 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+}
+
+.btn-r-l:hover {
+  background-position: right top;
+  color: white;
+}
+
+.btn-t-b {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, red), color-stop(50%, #ebebeb));
+  background: linear-gradient(to bottom, red 50%, #ebebeb 50%);
+  background-size: 100% 200%;
+  background-position: left bottom;
+}
+
+.btn-t-b:hover {
+  background-position: right top;
+  color: white;
+}
+
+.btn-b-t {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ebebeb), color-stop(50%, red));
+  background: linear-gradient(to bottom, #ebebeb 50%, red 50%);
+  background-size: 100% 200%;
+  background-position: left top;
+}
+
+.btn-b-t:hover {
+  background-position: right bottom;
+  color: white;
+}
+/*# sourceMappingURL=btns.css.map */

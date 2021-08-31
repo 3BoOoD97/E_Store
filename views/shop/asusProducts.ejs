@@ -40,7 +40,11 @@ ASUS
     </div>
   </div>
 
-
+  <img src="/css/asus.png"  height="150px" width="320px" class="companyLogo">
+  <p style = "font-family:courier,arial,helvetica;" class="AsusCompanyInfo">
+    Take your creativity and productivity to the next level with a various range of Asus laptops.
+     Asus laptops are perfect for gamers, students, people working from home, and anyone who needs real power.
+     Asus laptops also include models with a touchscreen to give you even more flexibility and great value.</p>
 
   <div id="wrapper">
 
@@ -64,10 +68,9 @@ ASUS
           <div id="grid">
 
 
-        <% chunk.forEach((products)=>{%> 
           <div class="row pt-5"> 
+            <% products.forEach((product)=>{%> 
 
-              <% products.forEach((product)=>{%> 
                   <div class="col-sm-1 col-md-4">
 
                 <div class="product">
@@ -125,8 +128,7 @@ ASUS
           </div>    
               <%})%>
       </div>
-      <%})%>
-
+    
    
 
   

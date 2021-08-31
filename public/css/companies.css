@@ -1,3 +1,4 @@
+/*** INDEX */
 .imgContainer
 {
 	width: 1100px;
@@ -43,4 +44,31 @@
 	position: relative;
 	top: -155px;
 	left:210px;
+}
+
+/*******/
+
+
+.RazCompanyInfo{
+position: relative;
+text-align: center;
+margin-left: 95px;
+margin-right: 95px;
+font-size: 30px;
+top: -650px;
+}
+
+.AsusCompanyInfo{
+	position: relative;
+	text-align: center;
+	margin-left: 95px;
+	margin-right: 95px;
+	font-size: 30px;
+	top: -620px;
+	}
+
+.companyLogo{
+	position: relative;
+	top: -600px;
+	left:543px;
 }

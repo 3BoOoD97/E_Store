@@ -14,18 +14,9 @@ router.get('/productsView', (req, res) => {
 
 router.get('/asusProducts', (req, res) => {
 
-
     Product.find({'manufacturer': 'ASUS'},{},(err,products)=>{
-        // res.json(events)
-    
-        let chunk = []
-        let chunkSize = 3
-        for(let i=0; i<products.length; i+=chunkSize){
-            chunk.push(products.slice(i, chunkSize+i))
-        }
-        //res.json(chunk)
         res.render('shop/asusProducts', {
-            chunk: chunk,
+            products: products,
             message: req.flash('info'),
            // total: parseInt(totalDoc),
          //   pageNo: pageNo
@@ -37,19 +28,10 @@ router.get('/asusProducts', (req, res) => {
 router.get('/MSIProducts', (req, res) => {
 
     Product.find({'manufacturer': 'MSI'},{},(err,products)=>{
-        // res.json(events)
-    
-        let chunk = []
-        let chunkSize = 3
-        for(let i=0; i<products.length; i+=chunkSize){
-            chunk.push(products.slice(i, chunkSize+i))
-        }
-        //res.json(chunk)
         res.render('shop/MSIProducts', {
-            chunk: chunk,
+            products: products,
             message: req.flash('info'),
-           // total: parseInt(totalDoc),
-         //   pageNo: pageNo
+     
         })
      })
 })
@@ -57,9 +39,17 @@ router.get('/MSIProducts', (req, res) => {
 
 
 router.get('/razerProducts', (req, res) => {
-    res.render('shop/razerProducts', {
-    })
+
+    Product.find({'manufacturer': 'RAZER'},{},(err,products)=>{
+        res.render('shop/razerProducts', {
+            products: products,
+            message: req.flash('info'),
+     
+        })
+     })
 })
+
+
 
 
 

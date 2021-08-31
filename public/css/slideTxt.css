@@ -53,14 +53,13 @@ a:hover {
 
 .os-phrases h2 {
 	font-family: 'Dosis', 'Lato', sans-serif;
-	font-size: 60px;
 	font-weight: 200;
 	width: 100%;
 	overflow: hidden;
 	text-transform: uppercase;
 	padding: 0;
 	margin: 0;
-	font-size: 40px;
+	font-size: 30px;
 	position: absolute;
 	top: 230px;
 	left: 0;
@@ -142,7 +141,7 @@ a:hover {
 
 
 .os-phrases h2:nth-child(5) > span > span > span {
-	font-size: 150px;
+	font-size: 120px;
 	-webkit-animation-delay: 21s;
 	-moz-animation-delay: 21s;
 	animation-delay: 21s;
