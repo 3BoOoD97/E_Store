@@ -123,7 +123,7 @@ a:hover {
 .os-phrases h2:nth-child(2) > span > span > span {
 	-webkit-animation-delay: 5s;
 	-moz-animation-delay: 5s;
-	animation-delay: 5s;
+	animation-delay: 5s; 
 }
 
 .os-phrases h2:nth-child(3) > span > span > span {
@@ -139,15 +139,23 @@ a:hover {
 	
 }
 
-
 .os-phrases h2:nth-child(5) > span > span > span {
-	font-size: 120px;
-	-webkit-animation-delay: 21s;
-	-moz-animation-delay: 21s;
-	animation-delay: 21s;
-	-webkit-animation-duration: 12s;
-	-moz-animation-duration: 12s;
-	animation-duration: 12s;
+	-webkit-animation-delay: 19s;
+	-moz-animation-delay:19s;
+	animation-delay: 20s;
+	
+}
+
+.os-phrases h2:nth-child(6) > span > span > span {
+	position: relative;
+	top: -200px;
+	font-size: 90px;
+	font-family: cursive;	-webkit-animation-delay: 21s;
+	-moz-animation-delay: 25s;
+	animation-delay: 25s;
+	-webkit-animation-duration: 10s;
+	-moz-animation-duration: 10s;
+	animation-duration: 10s;
 	
 }
 
@@ -230,12 +238,22 @@ a:hover {
 }
 
 /* Bold words */
-.os-phrases h2:first-child .word3,
-.os-phrases h2:nth-child(2) .word2,
-.os-phrases h2:nth-child(4) .word2 {
+.os-phrases h2:first-child .word1,
+.os-phrases h2:first-child .word2,
+
+.os-phrases h2:nth-child(2) .word1,
+
+.os-phrases h2:nth-child(3) .word1,
+
+.os-phrases h2:nth-child(4) .word1,
+.os-phrases h2:nth-child(4) .word3,
+
+.os-phrases h2:nth-child(5) .word1,
+.os-phrases h2:nth-child(5) .word2,
+
+.os-phrases h2:nth-child(4) .word1 {
 	font-weight: 600;
 }
-
 
 
 
